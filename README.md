@@ -1,4 +1,4 @@
-# afcat
+# `afcat`
 Helllo there my friend!
 this is `afcat`, the guy that's going to help you achieve your goals much easier.
 
