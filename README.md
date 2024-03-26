@@ -24,10 +24,8 @@ AFCAT is designed to be straightforward to set up:
 
 1. Clone the repository to your local machine. 📥
 2. Navigate to the cloned directory.
-3. Install the required dependencies by running `pip install -r requirements.txt`. 📦
-4. Run AFCAT by executing the main script: `afcat.py` 🖥
-
-AFCAT will automatically check for and install any necessary dependencies.
+3. Run AFCAT by executing the main script: `afcat.py` 🖥
+4. AFCAT will automatically check for and install any necessary dependencies.
 
 ## Usage 📚
 
