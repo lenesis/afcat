@@ -1,4 +1,4 @@
-from modules import getparse
+from colorama import Fore
 
 def getproxy() -> str:
     with open('.proxy.afcat') as f:
@@ -11,7 +11,8 @@ def __setthis(proxy):
         p.write(f'{proxy}')
 
 def setproxy():
-    proxy = getparse.get()
+    proxy = input(f'{Fore.YELLOW}enter your proxy (http(s)://host:port) -----> {Fore.BLUE}')
+    print(Fore.RESET, '\r')
     __setthis(proxy)
 
 def unsetproxy():

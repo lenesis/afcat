@@ -3,6 +3,7 @@ import requests
 from colorama import init, Fore
 from os import system as terminator
 from modules import getparse
+from modules import proxyguy
 init()
 
 
@@ -25,7 +26,7 @@ def find_admin():
         url = getparse.get()
         prc = True
         for i in database.admin_list:
-            code = requests.get(url + i).status_code
+            code = requests.get(url + i,proxies={'http':proxyguy.getproxy(), 'https' : proxyguy.getproxy()}).status_code
             if code == 200:
                 print(Fore.LIGHTGREEN_EX,
                       'FOUND! ----[   ', url + i, '   ]\n', Fore.RESET)

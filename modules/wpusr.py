@@ -4,7 +4,7 @@ from urllib3.exceptions import InsecureRequestWarning
 from colorama import Fore
 from os import system as terminator
 from modules import getparse
-
+from modules import proxyguy
 disable_warnings(InsecureRequestWarning)
 user_agent = {'User-Agent': 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16'}
 
@@ -17,7 +17,7 @@ def __fetch(target_url):
     i = 0
     for ep in endpoints:
         url = f"{target_url}{ep}"
-        response = requests.get(url, timeout=7, headers=user_agent, verify=False, allow_redirects=False)
+        response = requests.get(url, timeout=7, headers=user_agent, verify=False, allow_redirects=False,proxies={'http' : proxyguy.getproxy(), 'https' : proxyguy.getproxy()})
         if response.status_code == 200:
             i += 1
             user_data = response.json()
