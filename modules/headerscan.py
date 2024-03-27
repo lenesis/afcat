@@ -1,10 +1,11 @@
 from modules import getparse
 import requests
 from colorama import Fore
+from modules import proxyguy
 from os import system as terminator
 def scan():
     try:
-        __reqhead = requests.get(getparse.get()).headers
+        __reqhead = requests.get(getparse.get(), proxies={'http':proxyguy.getproxy(), 'https' : proxyguy.getproxy()}).headers
         for key in __reqhead:
             print (f'{Fore.BLUE} [ {key} ]-----> {Fore.GREEN}{__reqhead[key]}{Fore.RESET}')
     except KeyboardInterrupt:

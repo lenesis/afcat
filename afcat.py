@@ -4,15 +4,22 @@ from modules import wpusr
 from modules import headerscan
 from colorama import init, Fore
 from os import system as terminator
+from modules import proxyguy
 init()
 depcheck.check_for_deps()
 
 
 def get_prompt():
-    print(Fore.YELLOW, '''   CHOOSE AN OPTION:
+    try:
+        current_proxy = proxyguy.getproxy()
+    except IndexError:
+        current_proxy = None
+    print(Fore.YELLOW, f'''   CHOOSE AN OPTION:
         1. General Headers Scan
         2. Admin and Other Common Pages Scan
         3. WordPress Users List Scan (CVE-2017-5487)
+        98. Unset Proxy
+        99. Set Proxy (Corrent Proxy: {current_proxy})
         0. Exit
         ''')
     inp = input('-------► ')
@@ -35,6 +42,16 @@ def get_prompt():
             wpusr.scan()
             print('Press Enter To Continue.')
             input()
+            terminator('clear')
+            bannerise.banner()
+            get_prompt()
+        elif int(inp) == 99:
+            proxyguy.setproxy()
+            terminator('clear')
+            bannerise.banner()
+            get_prompt()
+        elif int(inp) == 98:
+            proxyguy.unsetproxy()
             terminator('clear')
             bannerise.banner()
             get_prompt()
