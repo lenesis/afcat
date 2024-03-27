@@ -9,7 +9,7 @@ AFCAT offers a range of functionalities, including but not limited to:
 - **Site Header Scanning:** Quickly scan site headers to gather general information about a target website. 🔍
 - **WordPress User Enumeration:** Attack WordPress websites to retrieve a list of users, aiding in vulnerability assessment. 🧑‍💻
 - **Admin Page Discovery:** Scan for admin and other well-known pages of a website to identify potential points of entry. 🔐
-
+- **HTTP(S) Proxy Support:** You can do things more privately by setting a proxy! 😉
 More features are continuously being added to enhance AFCAT's capabilities.
 
 ## Getting Started 🚀
